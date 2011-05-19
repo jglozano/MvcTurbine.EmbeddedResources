@@ -1,0 +1,13 @@
+[Bb]in/
+[Oo]bj/
+TestResults/
+EmailPickup/
+Log_/
+_ReSharper.*/
+
+*.suo
+*.user
+*.swp
+
+Thumbs.db
+.DS_Store
