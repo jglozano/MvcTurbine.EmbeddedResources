@@ -29,29 +29,29 @@ namespace MvcTurbine.EmbeddedResources
 			}
 		}
 
-		public bool ContainsEmbeddedResource(string resourcePath)
+		public bool ContainsEmbeddedResource(string virtualPath)
 		{
-			var foundResource = FindEmbeddedResource(resourcePath);
+			var foundResource = FindEmbeddedResource(virtualPath);
 			return (foundResource != null);
 		}
 
-		public EmbeddedResource FindEmbeddedResource(string resourcePath)
+		public EmbeddedResource FindEmbeddedResource(string virtualPath)
 		{
-			var name = GetNameFromPath(resourcePath);
-			if (string.IsNullOrEmpty(name)) 
+			var name = GetNameFromPath(virtualPath);
+			if (string.IsNullOrEmpty(name))
 				return null;
 
 			return Resources
-				.Where(resource => resource.Name.ToLowerInvariant().Contains(name.ToLowerInvariant()))
-				.SingleOrDefault();
+				.FirstOrDefault(resource => resource.Name.EndsWith(name, StringComparison.InvariantCultureIgnoreCase));
 		}
 
-		protected string GetNameFromPath(string resourcePath)
+		protected string GetNameFromPath(string virtualPath)
 		{
-			if (string.IsNullOrEmpty(resourcePath))
+			if (string.IsNullOrEmpty(virtualPath))
 				return null;
-			var name = resourcePath.Replace("/", ".");
-			return name.Replace("~", "");
+			return virtualPath
+				.Replace("~", "")
+				.Replace("/", ".");
 		}
 	}
 }

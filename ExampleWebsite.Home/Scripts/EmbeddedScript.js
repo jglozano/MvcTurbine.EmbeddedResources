@@ -1,2 +1,2 @@
 /* embedded script. */
-document.Write("Embedded Script.");
+document.write("Embedded Script.");

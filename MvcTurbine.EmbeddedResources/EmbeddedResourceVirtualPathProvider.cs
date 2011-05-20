@@ -18,32 +18,34 @@ namespace MvcTurbine.EmbeddedResources
 			embeddedResources = table;
 		}
 
-		private bool IsEmbeddedResource(string virtualPath)
-		{
-			string checkPath = VirtualPathUtility.ToAppRelative(virtualPath);
-
-			var isContent = checkPath.Contains("/Content/");
-			var isScript = checkPath.Contains("/Scripts/");
-			var isEmbedded = embeddedResources.ContainsEmbeddedResource(checkPath);
-
-			return (isContent || isScript) && isEmbedded;
-		}
-
 		public override bool FileExists(string virtualPath)
 		{
-			var found = IsEmbeddedResource(virtualPath) || base.FileExists(virtualPath);
-			return found;
+			return base.FileExists(virtualPath) || IsEmbeddedResource(virtualPath);
+		}
+
+		private bool IsEmbeddedResource(string virtualPath)
+		{
+			virtualPath = VirtualPathUtility.ToAppRelative(virtualPath);
+
+			var isContent = virtualPath.Contains("/Content/");
+			var isScript = virtualPath.Contains("/Scripts/");
+			if (!isContent && !isScript)
+				return false;
+			return embeddedResources.ContainsEmbeddedResource(virtualPath);
 		}
 
 		public override VirtualFile GetFile(string virtualPath)
 		{
+			if (base.FileExists(virtualPath))
+				return base.GetFile(virtualPath);
+
 			if (IsEmbeddedResource(virtualPath))
 			{
 				var embeddedResource = embeddedResources.FindEmbeddedResource(virtualPath);
 				return new AssemblyResourceFile(embeddedResource, virtualPath);
 			}
 
-			return base.GetFile(virtualPath);
+			return null;
 		}
 
 		public override CacheDependency GetCacheDependency(string virtualPath, IEnumerable virtualPathDependencies, DateTime utcStart)

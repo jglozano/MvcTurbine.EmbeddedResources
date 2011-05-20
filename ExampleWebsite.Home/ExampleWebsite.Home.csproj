@@ -65,11 +65,13 @@
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Routing\RouteRegistrator.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Content\EmbeddedImage.gif" />
     <EmbeddedResource Include="Content\EmbeddedStyle.css" />
     <EmbeddedResource Include="Scripts\EmbeddedScript.js" />
+    <EmbeddedResource Include="Content\EmbeddedText.txt" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
   </ItemGroup>

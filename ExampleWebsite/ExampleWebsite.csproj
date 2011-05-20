@@ -88,6 +88,7 @@
     <Compile Include="Routing\RouteRegistrator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Home\Content\Text.txt" />
     <Content Include="Global.asax" />
     <Content Include="Content\Style.css" />
     <Content Include="Scripts\Script.js" />
