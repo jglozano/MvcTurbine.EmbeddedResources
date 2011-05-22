@@ -10,11 +10,11 @@ namespace ExampleWebsite.Routing
 		{
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-			//// this is my temporary fix. not having a default route would be better.
+			//// This is an ugly hack to allow a default route. It is best to not use one.
 			//routes.IgnoreRoute("{assembly}/Content/{*pathInfo}");
 			//routes.IgnoreRoute("{assembly}/Scripts/{*pathInfo}");
 
-			//// the default route intercepts paths to non physical files expecting a controller 
+			//// A default route intercepts paths to non physical files. Do not use one.
 			//routes.MapRoute("Default", "{controller}/{action}/{id}",
 			//    new { controller = "Home", action = "Index", id = UrlParameter.Optional });
 		}

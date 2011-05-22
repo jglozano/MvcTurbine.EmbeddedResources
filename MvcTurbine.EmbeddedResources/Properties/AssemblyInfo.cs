@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright Jared McGuire")]
 [assembly: ComVisible(false)]
 [assembly: Guid("9d1b1dc1-0c3c-47de-ac1c-8183f1542c01")]
-[assembly: AssemblyVersion("0.1.0520.21")]
-[assembly: AssemblyFileVersion("0.1.0520.21")]
+[assembly: AssemblyVersion("0.2.0521.22")]
+[assembly: AssemblyFileVersion("0.2.0521.22")]

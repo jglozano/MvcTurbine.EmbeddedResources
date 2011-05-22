@@ -1,1 +1,1 @@
-This is an embedded text file.
+This is an embedded text file in the ExampleWebsite.Home project.

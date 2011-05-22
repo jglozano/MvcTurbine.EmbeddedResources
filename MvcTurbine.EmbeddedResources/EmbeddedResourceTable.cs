@@ -18,7 +18,7 @@ namespace MvcTurbine.EmbeddedResources
 		public void AddResource(string resourceName, string assemblyName)
 		{
 			lock (Lock)
-				cache[resourceName] = new EmbeddedResource {Name = resourceName, AssemblyFullName = assemblyName};
+				cache[resourceName] = new EmbeddedResource { Name = resourceName, AssemblyFullName = assemblyName };
 		}
 
 		public IList<EmbeddedResource> Resources
@@ -41,8 +41,11 @@ namespace MvcTurbine.EmbeddedResources
 			if (string.IsNullOrEmpty(name))
 				return null;
 
-			return Resources
-				.FirstOrDefault(resource => resource.Name.EndsWith(name, StringComparison.InvariantCultureIgnoreCase));
+			var resources = Resources.Where(r => r.Name.EndsWith(name, StringComparison.InvariantCultureIgnoreCase));
+			if (resources.Count() > 1)
+				throw new Exception(string.Format("Multiple resources found matching \"{0}\". Consider using the project naming convention \"SiteName.ProjectName\".", name));
+
+			return resources.SingleOrDefault();
 		}
 
 		protected string GetNameFromPath(string virtualPath)
