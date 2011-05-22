@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Sample Page";
+}
+
+<h2>Sample Page</h2>
+
+<p>This project is named "ExampleWebsitePage". It is recommended to use the convention "SiteName.ProjectName". That would
+	make this project "ExampleWebsite.Page". See the project "ExampleWebsite.Home" as an example.</p>
+
+<p>The file "/Home/Content/EmbeddedText.txt" is matched to "ExampleWebsite.Home.Content.EmbeddedText.txt".<br />
+	The file "/Content/EmbeddedText.txt" however matches both "ExampleWebsite.Home.Content.EmbeddedText.txt"
+	and "ExampleWebsitePage.Content.EmbeddedText.txt".</p>
+<p>An exception is intentionally thrown when multiple matches are found.</p>
+
+<a href="@Url.Content("~/Content/EmbeddedText.txt")">EmbeddedText.txt</a>

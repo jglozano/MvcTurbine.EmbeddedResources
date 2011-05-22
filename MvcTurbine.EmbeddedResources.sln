@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleWebsite.Home", "Exam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTurbine.EmbeddedResources", "MvcTurbine.EmbeddedResources\MvcTurbine.EmbeddedResources.csproj", "{7145B7E5-DC13-475F-BE3D-1ACC7827A8C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleWebsitePage", "ExampleWebsitePage\ExampleWebsitePage.csproj", "{7FB0B66C-93DE-4788-AF0F-1CDB4F3BFC3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{7145B7E5-DC13-475F-BE3D-1ACC7827A8C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7145B7E5-DC13-475F-BE3D-1ACC7827A8C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7145B7E5-DC13-475F-BE3D-1ACC7827A8C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB0B66C-93DE-4788-AF0F-1CDB4F3BFC3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB0B66C-93DE-4788-AF0F-1CDB4F3BFC3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB0B66C-93DE-4788-AF0F-1CDB4F3BFC3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB0B66C-93DE-4788-AF0F-1CDB4F3BFC3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
